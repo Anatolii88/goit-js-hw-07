@@ -19,15 +19,5 @@ function getGalleryItems(galleryItems) {
 // Добавляю разметку в список gallery
 galleryElement.innerHTML = getGalleryItems(galleryItems)
 
-// Добавляю слушателя события  на  список  gallery , использую делегирование 
-galleryElement.addEventListener('click', onClickImg)
-function onClickImg(e) { 
-  console.log(e.target)
-  if (!e.target.classList.contains('gallery__image')) { 
-    return;
-  }
-    lightbox.open()
-}
-
 // Использую библиотеку SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', { captionSelector: 'img', captionType: 'attr', captionsData: 'alt', captionDelay: 250, captionPosition: 'bottom' });
